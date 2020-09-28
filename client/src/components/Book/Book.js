@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardBook from '@material-ui/core/CardBook'
+import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
@@ -21,7 +21,7 @@ const Book = props => {
 
   return (
     <Card className={classes.root}>
-        <CardBook
+        <CardMedia
           className={classes.book}
           image={props.book.image}
           title={props.book.title}
