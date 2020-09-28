@@ -24,7 +24,7 @@ const Saved = () => {
 
   return (
     <>
-    <h1>Your saved Google Books</h1>
+    <h1>Your Saved Google Books</h1>
       {
         savedState.saved.length > 0 ? (
           savedState.saved.map(book => (
