@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import Saved from './pages/Saved'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/saved" component={Saved} />
