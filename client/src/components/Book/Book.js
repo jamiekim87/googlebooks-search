@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
-  media: {
+  book: {
     height: 140,
   },
 })
