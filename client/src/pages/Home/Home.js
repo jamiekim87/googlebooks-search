@@ -1,18 +1,24 @@
 import React, { useState } from 'react'
+import { getBook } from '../../utils/API'
 
 const Home = () => {
 
-  const {mediaState, setMediaState} = useState({
+  const {bookState, setBookState} = useState({
     search: '',
-    media: []
+    book: []
   })
 
-  mediaState.handleInputChange = event => {
-    setMediaState({ ...mediaState, [event.target.name]: event.target.value })
+  bookState.handleInputChange = event => {
+    setBookState({ ...bookState, [event.target.name]: event.target.value })
   }
 
-  mediaState.handleSearchGoogle = event => {
+  bookState.handleSearchGoogle = event => {
     event.preventDefault()
+    getBook(bookState.search)
+        .then(({ data }) => {
+          console.log(data)
+        })
+        .catch(err => console.error(err))
   }
 
   return (
@@ -24,11 +30,11 @@ const Home = () => {
         <input 
             type="text" 
             name="search"
-            value={mediaState.search}
-            onChange={mediaState.handleInputChange} />
+            value={bookState.search}
+            onChange={bookState.handleInputChange} />
       </p>
       <p>
-        <button onClick={mediaState.handleSearchGoogle}>Search Google Books</button>
+        <button onClick={bookState.handleSearchGoogle}>Search Google Books</button>
       </p>
     </form>
     </>
