@@ -13,11 +13,11 @@ router.post('/book', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.put('/books/:id', (req, res) => {
-  Book.findByIdAndUpdate(req.params.id, req.body)
-    .then(book => res.json(book))
-    .catch(err => console.log(err))
-})
+// router.put('/books/:id', (req, res) => {
+//   Book.findByIdAndUpdate(req.params.id, req.body)
+//     .then(book => res.json(book))
+//     .catch(err => console.log(err))
+// })
 
 router.delete('/books/:id', (req, res) => {
   Book.findById(req.params.id)
