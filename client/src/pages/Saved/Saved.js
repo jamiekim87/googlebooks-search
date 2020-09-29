@@ -28,7 +28,7 @@ const Saved = () => {
       {
         savedState.saved.length > 0 ? (
           savedState.saved.map(book => (
-            <div key={book.googleID}>
+            <div key={book.googleId}>
               <img src={book.image} alt={book.title} />
               <h3>{book.title}</h3>
               <h4>Authors: {book.authors}</h4>

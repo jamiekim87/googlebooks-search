@@ -3,13 +3,15 @@ const axios = require('axios')
 const { Book } = require('../models')
 
 router.get('/google/:search', (req, res) => {
-  axios.get(`https://www.googleapis.com/auth/books/?apikey=trilogy&s=${bookstate}`)
-    .then(({ data }) => data.Search.map(book => ({
-      title: book.Title,
-      authors: book.Authors,
-      description: book.Description,
-      image: book.Image,
-      link: book.Link
+  console.log('here')
+  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.search}`)
+  .then(({ data }) => data.items.map(book => ({
+      title: book.volumeInfo.title,
+      authors: book.volumeInfo.authors,
+      description: book.volumeInfo.description,
+      image: book.volumeInfo.imageLinks.thumbnail,
+      link: book.volumeInfo.infoLink,
+      googleID: book.id
     })))
     .then(apiBook => Book.find()
       .then(book => apiBook.filter(data =>

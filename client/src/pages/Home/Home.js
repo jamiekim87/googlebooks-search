@@ -26,7 +26,7 @@ const Home = () => {
   }
 
   bookState.handleSaveBook = googleID => {
-    const saveBook = bookState.media.filter(x => x.googleID === googleID)[0]
+    const saveBook = bookState.book.filter(x => x.googleID === googleID)[0]
     API.saveBook(saveBook)
       .then(() => {
         const book = bookState.book.filter(x => x.googleID !== googleID)
@@ -45,7 +45,7 @@ const Home = () => {
       {
         bookState.book.length > 0 ? (
           bookState.book.map(book => (
-            <book
+            <Book
               key={book.googleID}
               book={book}
               handleSaveBook={bookState.handleSaveBook} />
