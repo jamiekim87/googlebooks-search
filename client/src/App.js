@@ -18,7 +18,7 @@ const App = () => {
         </nav>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/saved" compenent={Saved} />
+          <Route path="/saved" component={Saved} />
         </Switch>
         </div>
       </Router>
