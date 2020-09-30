@@ -29,10 +29,10 @@ const Saved = () => {
         savedState.saved.length > 0 ? (
           savedState.saved.map(book => (
             <div key={book.googleID}>
-              <img src={book.image} alt={book.title} />
+              <img src={book.poster} alt={book.title} />
               <h3>{book.title}</h3>
-              <h4>Authors: {book.type}</h4>
-              <h4>Description: {book.description}</h4>
+              <h4>Type: {book.type}</h4>
+              <h4>Year: {book.year}</h4>
               <h5>googleID: {book.googleID}</h5>
               <button onClick={() => savedState.handleDeleteSaved(book._id)}>Delete</button>
             </div>
