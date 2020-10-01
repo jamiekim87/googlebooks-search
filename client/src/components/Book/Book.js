@@ -17,12 +17,13 @@ const useStyles = makeStyles({
 })
 
 const Book = props => {
+  console.log(props)
   const classes = useStyles()
 
   return (
     <Card className={classes.root}>
         <CardMedia
-          className={classes.book}
+          className={classes.media}
           image={props.book.image}
           title={props.book.title}
         />

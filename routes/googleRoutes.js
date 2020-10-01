@@ -7,7 +7,7 @@ router.get('/google/:search', (req, res) => {
   axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.search}`)
   .then(({ data }) => data.items.map(book => ({
       title: book.volumeInfo.title,
-      authors: book.volumeInfo.authors,
+      authors: book.volumeInfo.authors.join(", "),
       description: book.volumeInfo.description,
       image: book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.infoLink,

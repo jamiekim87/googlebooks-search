@@ -27,6 +27,7 @@ const Home = () => {
 
   bookState.handleSaveBook = googleID => {
     const saveBook = bookState.book.filter(x => x.googleID === googleID)[0]
+    console.log(saveBook)
     API.saveBook(saveBook)
       .then(() => {
         const book = bookState.book.filter(x => x.googleID !== googleID)

@@ -8,6 +8,7 @@ router.get('/book', (req, res) => {
 })
 
 router.post('/book', (req, res) => {
+  console.log(req.body)
   Book.create(req.body)
     .then(book => res.json(book))
     .catch(err => console.log(err))
@@ -19,7 +20,7 @@ router.post('/book', (req, res) => {
 //     .catch(err => console.log(err))
 // })
 
-router.delete('/books/:id', (req, res) => {
+router.delete('/book/:id', (req, res) => {
   Book.findById(req.params.id)
     .then(book => book.remove())
     .then(book => res.json(book))
