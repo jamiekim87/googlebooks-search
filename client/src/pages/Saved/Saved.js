@@ -34,8 +34,7 @@ const Saved = () => {
               <h3>{book.title}</h3>
               <h4>Authors: {book.authors}</h4>
               <h4>Description: {book.description}</h4>
-              <h5>googleID: {book.id}</h5>
-              <h6>Link: {book.link}</h6>
+              <h5>Link: {book.link}</h5>
               <button onClick={() => savedState.handleDeleteSaved(book._id)}>Delete</button>
             </div>
           ))
